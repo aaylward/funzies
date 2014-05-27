@@ -1,3 +1,5 @@
+
+comparisons = 0
 quickSort = (arr, leftIndex, rightIndex) ->
   if rightIndex - leftIndex < 2
     return false
@@ -9,6 +11,7 @@ quickSort = (arr, leftIndex, rightIndex) ->
 
   quickSort(arr, leftIndex, newPivotIndex)
   quickSort(arr, newPivotIndex+1, rightIndex)
+  comparisons += rightIndex - leftIndex - 1
 
 partition = (arr, left, right) ->
   pivot = arr[left]
@@ -37,3 +40,16 @@ medianOfThree = (arr, left, right) ->
     return left
   return right
 
+
+fs = require 'fs'
+
+numList = fs.readFileSync('../test/data/10.txt').toString().split('\r\n')
+nums = []
+for maybeNum in numList
+  num = parseInt maybeNum
+  if num is num
+    nums.push num
+
+quickSort nums, 0, nums.length
+
+console.log comparisons
