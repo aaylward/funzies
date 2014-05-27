@@ -1,5 +1,3 @@
-
-comparisons = 0
 quickSort = (arr, leftIndex, rightIndex) ->
   if rightIndex - leftIndex < 2
     return false
@@ -40,16 +38,8 @@ medianOfThree = (arr, left, right) ->
     return left
   return right
 
-
-fs = require 'fs'
-
-numList = fs.readFileSync('../test/data/10.txt').toString().split('\r\n')
-nums = []
-for maybeNum in numList
-  num = parseInt maybeNum
-  if num is num
-    nums.push num
-
-quickSort nums, 0, nums.length
-
-console.log comparisons
+exports = {
+  quickSort,
+  partition,
+  medianOfThree
+}
