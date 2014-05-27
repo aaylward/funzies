@@ -7,3 +7,7 @@ insertionSort = (items) ->
       [items[j-1], items[j]] = [items[j], items[j-1]]
       j--
 
+exports = { insertionSort }
+
+module.exports = exports
+
