@@ -9,7 +9,6 @@ quickSort = (arr, leftIndex, rightIndex) ->
 
   quickSort(arr, leftIndex, newPivotIndex)
   quickSort(arr, newPivotIndex+1, rightIndex)
-  comparisons += rightIndex - leftIndex - 1
 
 partition = (arr, left, right) ->
   pivot = arr[left]
