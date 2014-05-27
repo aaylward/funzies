@@ -25,11 +25,7 @@ partition = (arr, left, right) ->
   pivotBoundary-1
 
 medianOfThree = (arr, left, right) ->
-  length = right + 1 - left
-  if (length % 2) is 0
-    midIndex = left - 1 + length/2
-  else
-    midIndex = left - 1 + Math.ceil(length/2)
+  midIndex = middleIndex arr, left, right
 
   if (arr[left] < arr[midIndex] < arr[right]) or (arr[right] < arr[midIndex] < arr[left])
     return midIndex
@@ -37,10 +33,18 @@ medianOfThree = (arr, left, right) ->
     return left
   return right
 
+middleIndex = (arr, left, right) ->
+  length = right + 1 - left
+  if (length % 2) is 0
+    midIndex = left - 1 + length/2
+  else
+    midIndex = left - 1 + Math.ceil(length/2)
+
 exports = {
   quickSort,
   partition,
-  medianOfThree
+  medianOfThree,
+  middleIndex
 }
 
 module.exports = exports
