@@ -48,11 +48,13 @@ exports.MedianOfThree =
   'should pick the index of the median of [first, middle, last] in an array': (test) ->
     evenInput = [4,5,6,7]
     oddInput = [4,5,6,7,8]
+    scrambledInput = [3,1,-4,19,8]
 
-    test.expect 2
+    test.expect 3
 
     test.ok medianOfThree(evenInput, 0, evenInput.length - 1) is 1
     test.ok medianOfThree(oddInput, 0, oddInput.length - 1) is 2
+    test.ok medianOfThree(scrambledInput, 0, scrambledInput.length - 1) is 0
     test.done()
 
 
@@ -65,5 +67,11 @@ exports.MiddleIndex =
   'should return k for arrays of length 2k + 1': (test) ->
     test.expect 1
     test.ok middleIndex([0,1,2,3,4], 0, 4) is 2
+    test.done()
+
+  'should work with scrambled input': (test) ->
+    scrambledInput = [3,1,-4,19,8]
+    test.expect 1
+    test.ok middleIndex(scrambledInput, 0, scrambledInput.length) is 2
     test.done()
 
