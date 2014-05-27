@@ -1,0 +1,27 @@
+{
+  "name": "algorithms",
+  "version": "0.0.0",
+  "description": "Just for fun",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "runtests.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aaylward/funzies.git"
+  },
+  "author": "Andy",
+  "license": "BSD",
+  "gitHead": "b7fe05ebab6932f91bab24b96aa1d74b5a29f495",
+  "bugs": {
+    "url": "https://github.com/aaylward/funzies/issues"
+  },
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "coffee-script": "~1.7.1",
+    "nodeunit": "~0.9.0"
+  }
+}
