@@ -43,3 +43,6 @@ exports = {
   partition,
   medianOfThree
 }
+
+module.exports = exports
+
