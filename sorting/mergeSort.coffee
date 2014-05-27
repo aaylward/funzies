@@ -19,3 +19,10 @@ mergeSort = (array, length) ->
   right = mergeSort(rightHalf, rightHalf.length)
   return mergeSorted(left, right)
 
+exports = {
+  mergeSort,
+  mergeSorted
+}
+
+module.exports = exports
+

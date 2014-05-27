@@ -23,3 +23,10 @@ sortAndCount = (array, length) ->
 
   return [sorted, leftInversions + rightInversions + splitInversions]
 
+exports = {
+  mergeSortedAndCountSplitInversions,
+  sortAndCount
+}
+
+module.exports = exports
+

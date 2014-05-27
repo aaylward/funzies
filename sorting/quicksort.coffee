@@ -37,3 +37,11 @@ medianOfThree = (arr, left, right) ->
     return left
   return right
 
+exports = {
+  quickSort,
+  partition,
+  medianOfThree
+}
+
+module.exports = exports
+
