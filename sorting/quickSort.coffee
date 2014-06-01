@@ -1,20 +1,21 @@
-quickSort = (arr, leftIndex, rightIndex) ->
-  if rightIndex - leftIndex < 2
+quickSort = (arr, leftIndex, endIndex) ->
+  if endIndex - leftIndex < 1
     return false
 
-  pivotIndex = medianOfThree arr, leftIndex, rightIndex - 1
+  pivotIndex = medianOfThree arr, leftIndex, endIndex
   [arr[leftIndex], arr[pivotIndex]] = [arr[pivotIndex], arr[leftIndex]]
 
-  newPivotIndex = partition(arr, leftIndex, rightIndex)
+  newPivotIndex = partition(arr, leftIndex, endIndex)
 
-  quickSort(arr, leftIndex, newPivotIndex)
-  quickSort(arr, newPivotIndex+1, rightIndex)
+  quickSort(arr, leftIndex, newPivotIndex - 1)
+  quickSort(arr, newPivotIndex+1, endIndex)
+  true
 
-partition = (arr, left, right) ->
+partition = (arr, left, endIndex) ->
   pivot = arr[left]
   pivotBoundary = seenUnseenBoundary = left + 1
 
-  while seenUnseenBoundary < right
+  while seenUnseenBoundary <= endIndex
     if arr[seenUnseenBoundary] < pivot
       [arr[seenUnseenBoundary], arr[pivotBoundary]] = [arr[pivotBoundary], arr[seenUnseenBoundary]]
       pivotBoundary++
@@ -22,7 +23,7 @@ partition = (arr, left, right) ->
 
   [arr[left], arr[pivotBoundary-1]] = [arr[pivotBoundary-1], arr[left]]
 
-  pivotBoundary-1
+  pivotBoundary - 1
 
 medianOfThree = (arr, left, right) ->
   midIndex = middleIndex arr, left, right

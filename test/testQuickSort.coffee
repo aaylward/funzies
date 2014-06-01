@@ -1,4 +1,4 @@
-{ quickSort, partition, medianOfThree, middleIndex } = require 'sorting/quicksort.coffee'
+{ quickSort, partition, medianOfThree, middleIndex } = require 'sorting/quickSort.coffee'
 fs = require 'fs'
 { _ } = require 'underscore'
 
@@ -25,7 +25,7 @@ exports.QuickSort =
     test.expect 9
     for key of inputStrings
       test.deepEqual inputs["#{ key }"], inputs["#{ key }copy"]
-      quickSort inputs["#{ key }"], 0, inputs["#{ key }"].length
+      quickSort inputs["#{ key }"], 0, inputs["#{ key }"].length - 1
       test.notDeepEqual inputs["#{ key }"], inputs["#{ key }copy"]
       inputs["#{ key }copy"].sort (a,b) -> a-b
       test.deepEqual inputs["#{ key }"], inputs["#{ key }copy"]
@@ -39,8 +39,15 @@ exports.Partition =
     test.expect 1
     input = [3,1,6,0,2,4,7,5]
     pivotPoint = partition input, 0, 8
+    test.ok input[3] is 3
+    test.done()
 
-    test.ok input.indexOf(3) is 3
+  'should also partition this other array': (test) ->
+
+    test.expect 1
+    input2 = [3,1,9,4,0,5,2,8,7,6]
+    pivotPoint2 = partition input2, 0, input2.length - 1
+    test.ok input2[3] is 3
     test.done()
 
 
