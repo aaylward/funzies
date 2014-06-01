@@ -20,7 +20,6 @@
     "url": "https://github.com/aaylward/funzies/issues"
   },
   "dependencies": {
-    "underscore": "~1.6.0",
     "coffee-script": "~1.7.1",
     "nodeunit": "~0.9.0"
   }
