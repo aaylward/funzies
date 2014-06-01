@@ -1,6 +1,5 @@
 { quickSort, partition, medianOfThree, middleIndex } = require 'sorting/quickSort.coffee'
 fs = require 'fs'
-{ _ } = require 'underscore'
 
 inputStrings =
   10   : fs.readFileSync('test/data/10.txt').toString().split('\r\n')
