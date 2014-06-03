@@ -43,8 +43,8 @@ class Graph
     @edges = (x.split(",").map((x) -> parseInt(x, 10)) for x of edges)
     true
 
-graphFromAdjacencyList = (adjencyListString, removeParallelEdges=true) ->
-  lines = adjencyListString.split('\n')
+graphFromAdjacencyList = (adjacencyListString, removeParallelEdges=true) ->
+  lines = adjacencyListString.split('\n')
   graph = new Graph
 
   for line in lines
