@@ -1,5 +1,5 @@
 fs = require 'fs'
-{ minCut } = require '../graphs/graph.coffee'
+{ minCut } = require '../graphs/minCut.coffee'
 
 permutedSmallGraph = fs.readFileSync('test/data/lilcut2.txt').toString()
 smallSparseGraph = fs.readFileSync('test/data/lilcut.txt').toString()
