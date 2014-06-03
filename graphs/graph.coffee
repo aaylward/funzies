@@ -12,13 +12,13 @@ class Graph
       if @edges[idx][1] is nodeToReplace
         @edges[idx][1] = replacement
 
-    @removeCircularEdges()
     @vertices.splice @vertices.indexOf(nodeToReplace), 1
 
   kargerRandomCut: ->
     # probability of min-cut is (1/n^2)
     while @vertices.length > 2
       @contract()
+    @removeCircularEdges()
     @edges.length
 
   removeCircularEdges: ->
