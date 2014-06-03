@@ -2,9 +2,9 @@
 fs = require 'fs'
 
 inputStrings =
-  10   : fs.readFileSync('test/data/10.txt').toString().split('\r\n')
-  100  : fs.readFileSync('test/data/100.txt').toString().split('\r\n')
-  1000 : fs.readFileSync('test/data/1000.txt').toString().split('\r\n')
+  10   : fs.readFileSync('test/data/10.txt').toString().split('\n')
+  100  : fs.readFileSync('test/data/100.txt').toString().split('\n')
+  1000 : fs.readFileSync('test/data/1000.txt').toString().split('\n')
 
 inputs = {}
 
