@@ -67,3 +67,30 @@ module.exports.Queue =
 
     test.done()
 
+  'should compact when half of it is empty': (test) ->
+    LIMIT = 1000
+
+    test.expect LIMIT + 3
+    q = new Queue
+
+    i = 0
+    while i < LIMIT
+      q.enqueue i++
+
+    test.ok q.size() is LIMIT
+    test.ok q.items.length is LIMIT
+
+    j = 0
+    while j++ < LIMIT/2 - 1
+      q.dequeue()
+      test.ok q.size() is LIMIT - j
+      test.ok q.items.length is LIMIT
+
+    peek = q.peek()
+    itm = q.dequeue()
+    test.ok itm is LIMIT/2 - 1
+    test.ok itm is peek
+    test.ok q.size() is q.items.length
+
+    test.done()
+
