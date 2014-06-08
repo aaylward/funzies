@@ -7,8 +7,7 @@ class Queue
 
   dequeue: ->
     item = @items[@readIndex]
-    @items[@readIndex] = undefined
-    @readIndex++
+    @items[@readIndex++] = undefined
 
     if @readIndex >= @items.length / 2
       @items = @items.slice @readIndex
